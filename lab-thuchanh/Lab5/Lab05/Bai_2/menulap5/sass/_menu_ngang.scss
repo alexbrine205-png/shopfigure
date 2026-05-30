@@ -1,0 +1,22 @@
+/*  menu ngang */
+.menu_ngang {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    li{
+       margin: 0;
+       padding: 10px;
+       background-color:aquamarine;
+        a{
+          text-decoration: none;
+        }
+        a:hover{
+           color:rgb(255, 255, 255);
+           font-weight: bold;
+        }
+    }
+    li:hover{
+        background-color:rgb(255, 153, 80);
+        border-radius: 5px;
+    }
+ }
