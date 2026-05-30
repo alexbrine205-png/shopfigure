@@ -1,0 +1,129 @@
+/* ── ANIME PINK KAWAII STYLE ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #fff5f8;        /* Hồng cực nhạt */
+  --bg2: #ffe4ef;       /* Hồng pastel */
+  --bg3: #ffcce6;       /* Hồng đậm hơn cho header/footer */
+  --accent: #ff66b2;    /* Hồng cánh sen chủ đạo */
+  --accent2: #ff85c1;   /* Hồng nhạt hơn cho hover */
+  --text: #7a4a62;      /* Màu chữ nâu hồng */
+  --text2: #a87b92;     /* Màu chữ phụ */
+  --green: #88d4ab;     /* Xanh mint cute */
+  --red: #ff8fa3;       /* Hồng đỏ */
+  --card: #ffffff;      /* Card trắng tinh khiết */
+  --border: #ffccdf;    /* Viền hồng nhẹ */
+}
+
+body {
+  font-family: 'Segoe UI', 'Quicksand', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ── NAVBAR ── */
+nav {
+  background: #ffffff;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  border-bottom: 2px solid var(--bg3);
+  position: sticky; top: 0; z-index: 100;
+}
+
+.nav-logo { font-size: 1.6rem; font-weight: 800; color: var(--accent); }
+.nav-logo span { color: var(--text); }
+
+.nav-links a.btn-login {
+  background: var(--accent); color: #fff;
+  padding: 8px 20px; border-radius: 20px; /* Bo tròn cute */
+}
+
+/* ── HERO BANNER ── */
+.hero {
+  background: linear-gradient(135deg, #ffcce6 0%, #ffe4ef 100%);
+  padding: 60px 40px; text-align: center;
+}
+.hero h1 { color: var(--accent); font-size: 2.8rem; margin-bottom: 10px; }
+.hero-search input { border: 2px solid var(--bg3); border-radius: 20px; }
+.hero-search button { border-radius: 20px; background: var(--accent); }
+
+/* ── SECTION & CARDS ── */
+.section-title {
+  color: var(--accent);
+  border-bottom: 3px solid var(--bg3);
+}
+
+.game-card {
+  background: var(--card);
+  border-radius: 25px; /* Bo góc cực cute */
+  border: 2px solid var(--bg3);
+  transition: all 0.3s;
+}
+.game-card:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(255,102,178,0.2); }
+
+.game-card img { height: 160px; border-radius: 20px 20px 0 0; }
+.game-card-body { padding: 15px; }
+
+.btn-add {
+  background: var(--accent);
+  border-radius: 15px;
+  padding: 6px 15px;
+}
+
+/* ── DETAIL ── */
+.btn-big { background: var(--accent); border-radius: 20px; }
+.tag { background: var(--bg2); color: var(--accent); border-radius: 15px; }
+
+/* ── CART & AUTH ── */
+.auth-box { border-radius: 30px; border: 2px solid var(--bg3); }
+.auth-btn { border-radius: 20px; }
+.cart-item { border-radius: 20px; background: #fff; }
+
+/* ── TOAST ── */
+.toast { background: var(--accent); border-radius: 20px; }
+
+/* ── FOOTER ── */
+footer { background: #fff; border-top: 2px solid var(--bg3); }
+/* Tổng thể Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Đẩy trái phải ra xa nhau */
+    align-items: center;
+    padding: 15px 5%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Logo */
+.logo { font-size: 1.5rem; font-weight: bold; color: #ff66b2; text-decoration: none; }
+.logo span { color: #804060; }
+
+/* Các liên kết bên phải */
+.nav-right { display: flex; align-items: center; gap: 20px; }
+.nav-right a { text-decoration: none; color: #804060; font-weight: 500; transition: 0.3s; }
+.nav-right a:hover { color: #ff66b2; }
+
+/* Làm nổi bật nút Đăng nhập */
+.btn-login {
+    background-color: #ff66b2; /* Màu hồng đậm */
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 20px; /* Bo tròn góc */
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #ff85c1;
+    transform: scale(1.05); /* Hiệu ứng phình nhẹ khi rê chuột */
+}
+
+/* Style cho giỏ hàng */
+.cart-link { color: #ff66b2 !important; font-weight: bold; }

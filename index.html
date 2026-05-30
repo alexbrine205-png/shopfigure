@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AnimeFigure — Thế giới mô hình Kawaii</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    body { background-color: #fff5f8; font-family: sans-serif; }
+    .nav-logo { color: #ff66b2 !important; text-decoration: none; font-weight: bold; }
+    .nav-logo span { color: #804060 !important; }
+    .section-title { color: #ff66b2; border-bottom: 3px solid #ffcce6; padding-bottom: 10px; margin-bottom: 20px; font-size: 24px; }
+    .btn-add { background-color: #ff66b2 !important; color: white; border: none; padding: 8px 15px; border-radius: 15px !important; cursor: pointer; transition: 0.3s; }
+    .btn-add:hover { background-color: #ff85c1 !important; }
+    .game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+    .game-card { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .game-card img { width: 100%; height: auto; border-radius: 5px; }
+    .price { color: #ff66b2; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-left">
+        <a href="index.html" class="logo">🌸 Anime<span>Figure</span></a>
+    </div>
+    <div class="nav-right">
+        <a href="index.html">Cửa hàng</a>
+        <a href="lab.html">Lab Thực Hành</a>
+        <a href="cart.html" class="cart-link">
+            🛒 Giỏ hàng (<span id="cartBadge">0</span>)
+        </a>
+        <a href="login.html" class="btn-login">Đăng nhập</a>
+    </div>
+</nav>
+
+  <div class="hero">
+    <h1>✨ Thế giới Figure Kawaii</h1>
+    <p>Sưu tầm những nhân vật anime yêu thích với chất lượng tuyệt hảo nhất.</p>
+    <div class="hero-search">
+      <input type="text" id="searchInput" placeholder="Tìm kiếm figure..."/>
+      <button id="searchBtn">🔍 Tìm</button>
+    </div>
+  </div>
+
+ <div class="game-grid">
+    <div class="game-card">
+      <img src="images/rem.jpg" alt="Rem">
+      <div class="game-card-title">Rem - Re: Zero</div>
+      <span class="price">850.000 ₫</span>
+      <button class="btn-add" onclick="addToCart('Rem', 850000, 'images/rem.jpg', 'Nendoroid')">Thêm</button>
+    </div>
+
+    <div class="game-card">
+      <img src="images/kuma.jpg" alt="Yuna">
+      <div class="game-card-title">Yuna - Kuma Kuma Bear</div>
+      <span class="price">1.200.000 ₫</span>
+      <button class="btn-add" onclick="addToCart('Yuna', 1200000, 'images/kuma.jpg', 'Nendoroid')">Thêm</button>
+    </div>
+
+    <div class="game-card">
+      <img src="images/gojo.jpg" alt="Gojo">
+      <div class="game-card-title">Gojo Satoru</div>
+      <span class="price">990.000 ₫</span>
+      <button class="btn-add" onclick="addToCart('Gojo', 990000, 'images/gojo.jpg', 'Scale')">Thêm</button>
+    </div>
+
+    <div class="game-card">
+      <img src="images/fieren.jpg" alt="Frieren">
+      <div class="game-card-title">Frieren</div>
+      <span class="price">1.450.000 ₫</span>
+      <button class="btn-add" onclick="addToCart('Frieren', 1450000, 'images/fieren.jpg', 'Nendoroid')">Thêm</button>
+    </div>
+
+    <div class="game-card">
+      <img src="images/rimuru.jpg" alt="Rimuru">
+      <div class="game-card-title">Rimuru Tempest</div>
+      <span class="price">950.000 ₫</span>
+      <button class="btn-add" onclick="addToCart('Rimuru', 950000, 'images/rimuru.jpg', 'Nendoroid')">Thêm</button>
+    </div>
+  </div>
+
+  <script>
+    function addToCart(title, price, images, genre) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ title, price, images, genre });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`Đã thêm ${title} vào giỏ! 🌸`);
+        updateCartBadge();
+    }
+    function updateCartBadge() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        document.getElementById('cartBadge').textContent = cart.length;
+    }
+    updateCartBadge();
+  </script>
+</body>
+</html>

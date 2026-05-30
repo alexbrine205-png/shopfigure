@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đăng ký — AnimeFigure</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    body { background-color: #fff5f8; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+    
+    .auth-wrapper { display: flex; justify-content: center; align-items: center; padding: 40px 20px; width: 100%; }
+    
+    .auth-box { 
+      background: white; 
+      padding: 40px; 
+      border-radius: 40px; 
+      border: 3px solid #ffcce6; 
+      box-shadow: 0 10px 25px rgba(255, 102, 178, 0.15); 
+      width: 100%; 
+      max-width: 400px; 
+      text-align: center;
+    }
+
+    h1 { color: #ff66b2; margin-bottom: 10px; font-size: 2rem; }
+    p { color: #804060; margin-bottom: 25px; }
+
+    .form-group { text-align: left; margin-bottom: 15px; }
+    label { color: #804060; font-weight: bold; margin-bottom: 5px; display: block; font-size: 0.9rem; }
+    
+    input { 
+      width: 100%; 
+      padding: 12px; 
+      border-radius: 15px; 
+      border: 2px solid #ffcce6; 
+      box-sizing: border-box; 
+      background: #fffafa;
+    }
+    input:focus { border-color: #ff85c1; outline: none; }
+
+    .auth-btn { 
+      background: #ff66b2; 
+      color: white; 
+      border: none; 
+      padding: 12px; 
+      width: 100%; 
+      border-radius: 15px; 
+      font-weight: bold; 
+      cursor: pointer; 
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+    .auth-btn:hover { background: #ff85c1; transform: scale(1.02); }
+
+    .auth-switch { margin-top: 20px; color: #804060; font-size: 0.9rem; }
+    .auth-switch a { color: #ff66b2; font-weight: bold; text-decoration: none; }
+    
+    #errorMsg { color: #ff4d4d; font-size: 0.85rem; margin-bottom: 10px; }
+    #successMsg { color: #2ecc71; font-size: 0.85rem; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+  <nav style="width: 100%; padding: 20px; text-align: center;">
+    <a href="index.html" class="nav-logo" style="text-decoration: none; font-weight: bold; font-size: 1.5rem;">🌸 Anime<span>Figure</span></a>
+  </nav>
+
+  <div class="auth-wrapper">
+    <div class="auth-box">
+      <h1>🎀 Đăng ký</h1>
+      <p>Tạo tài khoản để sưu tầm thêm nhiều Figure nhé!</p>
+
+      <form onsubmit="handleRegister(event)">
+        <div class="form-group">
+          <label>Tên đăng nhập</label>
+          <input type="text" id="username" placeholder="Ít nhất 3 ký tự..." required/>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="email" placeholder="example@email.com" required/>
+        </div>
+        <div class="form-group">
+          <label>Mật khẩu</label>
+          <input type="password" id="password" placeholder="Ít nhất 6 ký tự..." required/>
+        </div>
+        <div class="form-group">
+          <label>Xác nhận mật khẩu</label>
+          <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu..." required/>
+        </div>
+        
+        <div id="errorMsg"></div>
+        <div id="successMsg"></div>
+        
+        <button type="submit" class="auth-btn">Tạo tài khoản</button>
+      </form>
+
+      <div class="auth-switch">
+        Đã có tài khoản? <a href="login.html">Đăng nhập ngay</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

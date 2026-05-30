@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chi tiết sản phẩm — AnimeFigure</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* Bo góc và làm mềm giao diện chi tiết */
+    .detail-wrapper { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    .detail-header img { border-radius: 20px; border: 2px solid var(--bg3); }
+    .btn-big { border-radius: 20px; background: var(--accent); }
+    .btn-big:hover { background: var(--accent2); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">🌸 Anime<span>Figure</span></a>
+    <div class="nav-links">
+      <a href="index.html">Cửa hàng</a>
+      <a href="cart.html" class="cart-icon">
+        🛒 <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+      <a href="login.html" class="btn-login">Đăng nhập</a>
+    </div>
+  </nav>
+
+  <div class="detail-wrapper">
+    <div id="detailContent"></div>
+  </div>
+
+  <footer>© 2026 AnimeFigure. Đồ án môn Thực Hành Nhập môn Lập trình Web.</footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Giỏ hàng — AnimeFigure Shop</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* Bổ sung style nhanh để trang giỏ hàng đúng chất Kawaii */
+    body { background-color: #fff5f8; font-family: sans-serif; }
+    .nav-logo { color: #ff66b2 !important; text-decoration: none; font-weight: bold; }
+    .nav-logo span { color: #804060 !important; }
+    .cart-wrapper { max-width: 800px; margin: 40px auto; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 4px 15px rgba(255,102,178,0.1); }
+    h1 { color: #ff66b2; text-align: center; }
+    .btn-checkout { background-color: #ff66b2 !important; color: white !important; padding: 15px 30px; border: none; border-radius: 15px !important; width: 100%; cursor: pointer; font-size: 1.1rem; }
+    .btn-checkout:hover { background-color: #ff85c1 !important; }
+    .total { font-size: 1.5rem; color: #804060; text-align: right; margin-bottom: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">🌸 Anime<span>Figure</span></a>
+    <div class="nav-links">
+      <a href="index.html">Cửa hàng</a>
+      <a href="cart.html" class="cart-icon">
+        🛒 <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+      <a href="login.html" class="btn-login">Đăng nhập</a>
+    </div>
+  </nav>
+
+  <div class="cart-wrapper">
+    <h1>🛒 Giỏ hàng Kawaii</h1>
+    <div id="cartItems"></div>
+
+    <div class="cart-summary" id="cartSummary" style="display:none">
+      <div class="total">Tổng cộng: <span id="cartTotal">0 ₫</span></div>
+      <button class="btn-checkout" onclick="checkout()">💳 Thanh toán ngay</button>
+      <div style="margin-top:12px;text-align:center">
+        <a href="index.html" style="color:#ff66b2; text-decoration:none;">← Tiếp tục sưu tầm figure</a>
+      </div>
+    </div>
+  </div>
+
+  <footer style="text-align:center; padding:20px; color:#804060;">© 2026 AnimeFigure Shop. Đồ án môn Thực Hành Nhập môn Lập trình Web.</footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

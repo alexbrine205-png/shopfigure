@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đăng nhập — AnimeFigure</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    body { background-color: #fff5f8; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+    
+    .auth-wrapper { display: flex; justify-content: center; align-items: center; padding: 40px 20px; width: 100%; }
+    
+    .auth-box { 
+      background: white; 
+      padding: 40px; 
+      border-radius: 40px; 
+      border: 3px solid #ffcce6; 
+      box-shadow: 0 10px 25px rgba(255, 102, 178, 0.15); 
+      width: 100%; 
+      max-width: 400px; 
+      text-align: center;
+    }
+
+    h1 { color: #ff66b2; margin-bottom: 10px; font-size: 2rem; }
+    p { color: #804060; margin-bottom: 30px; }
+
+    .form-group { text-align: left; margin-bottom: 20px; }
+    label { color: #804060; font-weight: bold; margin-bottom: 5px; display: block; }
+    
+    input { 
+      width: 100%; 
+      padding: 12px; 
+      border-radius: 15px; 
+      border: 2px solid #ffcce6; 
+      box-sizing: border-box; 
+      background: #fffafa;
+    }
+    input:focus { border-color: #ff85c1; outline: none; }
+
+    .auth-btn { 
+      background: #ff66b2; 
+      color: white; 
+      border: none; 
+      padding: 12px; 
+      width: 100%; 
+      border-radius: 15px; 
+      font-weight: bold; 
+      cursor: pointer; 
+      transition: 0.3s;
+    }
+    .auth-btn:hover { background: #ff85c1; transform: scale(1.02); }
+
+    .auth-switch { margin-top: 20px; color: #804060; }
+    .auth-switch a { color: #ff66b2; font-weight: bold; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <nav style="width: 100%; padding: 20px; text-align: center;">
+    <a href="index.html" class="nav-logo" style="text-decoration: none; font-weight: bold; font-size: 1.5rem;">🌸 Anime<span>Figure</span></a>
+  </nav>
+
+  <div class="auth-wrapper">
+    <div class="auth-box">
+      <h1>✨ Đăng nhập</h1>
+      <p>Chào mừng bạn quay lại thế giới figure!</p>
+
+      <form onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label>Tên đăng nhập</label>
+          <input type="text" id="username" placeholder="Tên của bạn..." required/>
+        </div>
+        <div class="form-group">
+          <label>Mật khẩu</label>
+          <input type="password" id="password" placeholder="Mật khẩu của bạn..." required/>
+        </div>
+        <div class="error-msg" id="errorMsg" style="color: red; font-size: 0.9rem; margin-bottom: 10px;"></div>
+        <button type="submit" class="auth-btn">Đăng nhập</button>
+      </form>
+
+      <div class="auth-switch">
+        Chưa có tài khoản? <a href="register.html">Đăng ký ngay</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
